@@ -1441,7 +1441,7 @@ Polymorphic Instance subrelation_iff_flip_arrow : subrelation iffT (flip arrow).
 Proof. by move=> ?? []. Qed.
 
 #[global]
-Instance reflect_m: Proper (iff ==> (@eq bool) ==> iffT) reflect.
+Instance reflect_m: Proper (iff ==> (@eq bool) ==> iffT@{Set Set}) reflect.
 Proof. by move=> P1 P2 Hiff b1 b2 ->; split=> H; apply (equivP H);rewrite Hiff. Qed.
 
 Coercion Zpos : positive >-> Z.
